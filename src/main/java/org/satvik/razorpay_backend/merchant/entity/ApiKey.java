@@ -1,6 +1,7 @@
 package org.satvik.razorpay_backend.merchant.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 import org.satvik.razorpay_backend.common.enums.Environment;
 
 import java.time.LocalDateTime;
@@ -8,6 +9,11 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "api_key")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class ApiKey {
 
     @Id

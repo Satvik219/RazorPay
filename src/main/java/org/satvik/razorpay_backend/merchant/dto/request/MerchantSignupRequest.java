@@ -1,0 +1,27 @@
+package org.satvik.razorpay_backend.merchant.dto.request;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import org.satvik.razorpay_backend.common.enums.BusinessType;
+
+public record MerchantSignupRequest(
+
+        @NotNull(message = "Name is required")
+        @Size(max = 50, message = "Name should not be more than 50 characters long")
+        String name,
+
+        @Email
+        @NotNull(message = "Email is required")
+        String email,
+
+        @NotNull(message = "Password is required")
+        @Size(min = 8, message = "Password should be at least 8 characters long")
+        String password,
+
+        @Size(max = 50, message = "Business name should not be more than 50 characters long")
+        String businessName,
+
+        BusinessType businessType
+) {
+}

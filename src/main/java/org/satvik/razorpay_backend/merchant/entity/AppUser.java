@@ -1,6 +1,7 @@
 package org.satvik.razorpay_backend.merchant.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 import org.satvik.razorpay_backend.common.enums.UserRole;
 
 import java.util.UUID;
@@ -8,6 +9,11 @@ import java.util.UUID;
 //1 merchant can have multiple employees/user who are accessing the system on behalf of the merchant
 @Entity
 @Table(name = "app_user")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
